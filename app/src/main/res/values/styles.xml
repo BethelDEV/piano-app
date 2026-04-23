@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PianoDialogPage" parent="Theme.AppCompat.Light.Dialog">
+<!--        <item name="android:windowBackground">@android:color/white</item> 设置dialog的背景，此处为系统给定的透明值-->
+        <item name="android:windowBackground">@color/bg_game</item> 设置dialog的背景
+        <item name="android:windowFrame">@null</item>                Dialog的windowFrame框为无
+        <item name="android:windowNoTitle">true</item>　　　　　　　　 是否显示标题
+        <item name="android:windowIsFloating">true</item>            是否浮现在activity之上
+        <item name="android:windowIsTranslucent">true</item>         是否半透明
+        <item name="android:windowContentOverlay">@null</item>       是否有覆盖
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>   设置Activity出现方式
+        <item name="android:backgroundDimEnabled">true</item>        背景是否模糊显示
+
+        <item name="android:background">@null</item>
+        <item name="android:title">@null</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:dialogTitle">@null</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PianoDialogWhitePage" parent="PianoDialogPage">
+        <item name="android:windowBackground">@color/white_milk</item> 设置dialog的背景
+    </style>
+
+    <style name="PianoDialogTransparent" parent="PianoDialogPage">
+        <item name="android:windowBackground">@android:color/transparent</item> 设置dialog的背景
+    </style>
+
+    <style name="TransSeekbarStyle" >
+        <item name="android:maxHeight">30dp</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@color/seek_icon</item>
+        <item name="android:progressDrawable">@drawable/seekbar_transparent_drawable</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:thumb">@drawable/seekbar_select</item>
+    </style>
+
+</resources>

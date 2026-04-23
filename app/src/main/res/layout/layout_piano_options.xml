@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/song_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/song_emoji"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:src="@android:drawable/ic_menu_share"
+        android:visibility="gone"/>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_main_id">
+    </com.google.android.gms.ads.AdView>
+
+    <TextView
+        android:id="@+id/settings_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:text=" ⚙️ "
+        android:textColor="@color/black_key"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/songs_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 🎼️ "
+        android:textColor="@color/black_key"
+        android:textSize="23sp"
+        android:layout_gravity="center_vertical|end"/>
+</FrameLayout>

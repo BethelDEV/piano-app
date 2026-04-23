@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:orientation="horizontal"
+    tools:openDrawer="start">
+-->
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_game"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_piano_options" />
+
+        <include layout="@layout/piano_indicator_layout" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/black_key" />
+
+        <HorizontalScrollView
+            android:id="@+id/piano_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:visibility="invisible">
+            <!-- <com.piano.view.PianoCanvasView
+                 android:id="@+id/piano_canvas"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent" />-->
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+<!--    <include layout="@layout/home_drawer_content" />-->
+<!--</androidx.drawerlayout.widget.DrawerLayout>-->

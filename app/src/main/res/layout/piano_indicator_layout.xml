@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/piano_seek_width"
+    android:layout_height="@dimen/piano_seek_height"
+    android:paddingTop="1dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/keyboard_shot">
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar"
+        style="@style/TransSeekbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:max="1000"
+        android:progress="240" />
+</FrameLayout>

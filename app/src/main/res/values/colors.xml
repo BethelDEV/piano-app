@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="bg_game">#FAF9DE</color>
+    <color name="black_key">#333333</color>
+<!--    <color name="bg_drawer">#FF4081</color>-->
+    <color name="bg_drawer">@color/bg_game</color>
+
+    <color name="seek_icon">#a9FF4081</color>
+
+    <color name="text_black">#333333</color>
+    <color name="text_grey">#888888</color>
+    <color name="line_grey">#cccccc</color>
+
+    <color name="white_milk">#fffaf8</color>
+
+    <color name="golden">#FFDF00</color>
+    <color name="golden1">#FAFAD2</color>
+    <color name="golden2">#EEE8AA</color>
+    <color name="golden3">#FFD700</color>
+
+</resources>

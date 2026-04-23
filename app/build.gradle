@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    namespace 'funs.games'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.golden.finger.piano"
+        minSdk 19
+        targetSdk 32
+        versionCode 3
+        versionName "1.20"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            resValue("string","ad_unit_main_id","${ProductAdUnitMainID}")
+        }
+        debug {
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            resValue("string","ad_unit_main_id","${TestAdUnitID}")
+        }
+
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(KEY_FILE_PATH)
+            storePassword KEYSTORE_PASSWORD
+            keyPassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+        }
+        release {
+            storeFile file(KEY_FILE_PATH)
+            keyAlias KEY_ALIAS
+            storePassword KEYSTORE_PASSWORD
+            keyPassword KEYSTORE_PASSWORD
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.resValue "string", "versionName", variant.versionName
+        variant.resValue "string", "package_id", variant.applicationId
+        variant.resValue "string", "ad_application_id", "${AdApplicationID}"
+
+        // assign different version code for each output
+        variant.outputs.each { output ->
+            output.outputFileName = "GF_piano_" +variant.versionCode+"_"+ variant.versionName + ".apk"
+
+            output.versionCodeOverride = android.defaultConfig.versionCode
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions "versionCode"
+
+    productFlavors {
+        debugChanel {
+            signingConfig signingConfigs.debug
+            buildConfigField 'String','appStoreUrl',"${GoogleStoreLink}"
+        }
+
+        googlePlay {
+            signingConfig signingConfigs.release
+            buildConfigField 'String','appStoreUrl',"${GoogleStoreLink}"
+        }
+        up2down {
+            signingConfig signingConfigs.release
+            // https://rings-net.en.uptodown.com/android
+//    todo        buildConfigField 'String','appStoreUrl',""
+            buildConfigField 'String','appStoreUrl',"${GoogleStoreLink}"
+        }
+        samsung {
+            signingConfig signingConfigs.release
+            buildConfigField 'String','appStoreUrl',"${SamsungStoreLink}"
+        }
+    }
+
+    productFlavors.all { // 遍历productFlavors多渠道，设置渠道号
+        flavor -> flavor.manifestPlaceholders.put("CHANNEL_VALUE", name)
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation project(path: ':common')
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+//    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+}

@@ -1,0 +1,7 @@
+<resources>
+<!--    <string name="app_name">牛弹琴</string>-->
+    <string name="quit_app">退出游戏</string>
+    <string name="settings">设置</string>
+
+    <string name="app_share_tips">嘿，我最近发现了一个很棒的钢琴应用，想和你分享一下！这款应用《Golden Finger Piano》非常方便，你可以在手机上随时随地演奏钢琴。我已经开始使用它了，一起来玩吧。</string>
+</resources>

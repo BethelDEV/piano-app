@@ -1,0 +1,5 @@
+<resources>
+<!--    <string name="app_name">PianOli</string>-->
+    <string name="quit_app">Έξοδος</string>
+    <string name="settings">Ρυθμίσεις</string>
+</resources>

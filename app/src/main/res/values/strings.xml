@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name" translatable="false">GF piano</string>
+<!--    <string name="app_name" translatable="false">Golden finger piano</string>-->
+    <string name="app_name_cmp" translatable="false">Golden finger</string>
+    <string name="quit_app">Quit app</string>
+    <string name="settings">Settings</string>
+
+    <string name="song_emoji" translatable="false"> 🎶  </string>
+    <!-- TODO: translate -->
+    <string name="colorful">Colorful</string>
+    <string name="classical">Classical</string>
+    <string name="keys_style">Style of piano keys</string>
+    <string name="guide_mode">Melody Guide Mode 👆 </string>
+    <string name="guide_mode_summary">Displays a guide 👆 to the next note in the melody on the keys </string>
+    <string name="select_melody_tips">Select Melody 🎶 &amp; Enable Guide Mode </string>
+    <string name="songs">Melodies</string>
+
+    <string name="app_share_tips">Hey, I recently discovered a great piano app and wanted to share it with you! This app \"Golden Finger Piano\" is very convenient, you can play the piano anytime and anywhere on your mobile phone. I\'ve started using it, let\'s play with it together.</string>
+
+</resources>
